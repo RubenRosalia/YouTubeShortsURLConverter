@@ -1,0 +1,18 @@
+version: '3'
+services:
+  
+  www:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - "./:/var/www/html"    
+    ports: 
+      - 80:80
+      - 443:443
+    networks:
+      - YouTubeShortsURLConverter
+
+networks:
+  YouTubeShortsURLConverter:
+    driver: bridge
